@@ -1,0 +1,40 @@
+domanda 1:  SELECT *
+            FROM `students`
+            JOIN `degrees`
+            ON  `students`.`degree_id` = `degrees`.`id`
+            WHERE `degrees`.`name` = "Corso di Laurea in Economia"
+
+domanda 2:  SELECT *
+            FROM `degrees`
+            JOIN `departments`
+            ON `degrees`.`department_id` = `departments`.`id`
+            WHERE `departments`.`name` = "Dipartimento di Neuroscienze"
+
+domanda 3:  SELECT *
+            FROM `course_teacher`
+            JOIN `teachers`
+            ON `course_teacher`.`teacher_id` = `teachers`.`id`
+            JOIN `courses`
+            ON `course_teacher`.`course_id` = `courses`.`id`
+            WHERE `teachers`.`id` = 44
+
+domanda 4:  SELECT *
+            FROM `degrees`
+            JOIN `courses`
+            ON `degrees`.`id` = `courses`.`degree_id`
+            JOIN `course_teacher`
+            ON `courses`.`id` = `course_teacher`.`course_id`
+            JOIN `teachers`
+            ON `course_teacher`.`teacher_id` = `teachers`.`id`
+
+domanda 5:  SELECT DISTINCT(`teachers`.`id`),`teachers`.`name`,`teachers`.`surname`,`departments`.`name`
+            FROM `teachers`
+            JOIN `course_teacher`
+            ON `teachers`.`id` = `course_teacher`.`teacher_id`
+            JOIN `courses`
+            ON `course_teacher`.`course_id` = `courses`.`id`
+            JOIN `degrees`
+            ON `courses`.`degree_id` = `degrees`.`id`
+            JOIN `departments`
+            ON `degrees`.`department_id` = `departments`.`id`
+            WHERE `departments`.`name` = "Dipartimento di Matematica"

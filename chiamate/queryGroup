@@ -1,0 +1,4 @@
+domanda 1:SELECT COUNT(id),YEAR(`enrolment_date`) FROM `students` GROUP BY YEAR(`enrolment_date`)
+domanda 2:SELECT COUNT(id),office_address FROM `teachers` GROUP BY office_address
+domanda 3:SELECT AVG(vote),exam_id FROM `exam_student` GROUP BY exam_id
+domanda 4:SELECT COUNT(id),department_id FROM `degrees`GROUP BY department_id
